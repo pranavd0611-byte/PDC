@@ -346,3 +346,47 @@ body {
         padding: 2rem;
     }
 }
+/* Contact Section Styling */
+.contact-container {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 280px; /* Keeps it centered and neat */
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1.2rem;
+    background: rgba(255, 255, 255, 0.3);
+    border: var(--glass-border);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-icon {
+    font-size: 1.2rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.contact-link span:last-child {
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+/* Optional: Make the Instagram handle the accent color on hover */
+.contact-link:hover span:last-child {
+    color: var(--accent);
+}
