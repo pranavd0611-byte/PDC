@@ -13,6 +13,21 @@
         <ul class="nav-links">
             <li><a href="#home" class="active" data-tab="home">Home</a></li>
             <li><a href="#credentials" data-tab="credentials">About me</a></li>
+            
+            <!-- Videos & Notes Dropdown Menu -->
+            <li class="dropdown">
+                <a href="#videos-notes" data-tab="videos-notes" class="dropbtn">Videos and Notes ▾</a>
+                <div class="dropdown-content">
+                    <a href="#libero" data-tab="libero">Libero</a>
+                    <a href="#outside" data-tab="outside">Outside</a>
+                    <a href="#opposite" data-tab="opposite">Opposite</a>
+                    <a href="#middle" data-tab="middle">Middle</a>
+                    <a href="#setter" data-tab="setter">Setter</a>
+                    <a href="#jump-topspin" data-tab="jump-topspin">Jump Topspin</a>
+                    <a href="#jump-float" data-tab="jump-float">Jump Float</a>
+                </div>
+            </li>
+
             <li><a href="#signup" data-tab="signup">Sign Up</a></li>
         </ul>
     </nav>
@@ -118,6 +133,201 @@
                             </div>
                         </li>
                     </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Videos and Notes Hub (Screen View) -->
+        <section id="videos-notes" class="tab-content">
+            <div class="hub-container">
+                <h2>Videos and Notes Library</h2>
+                <p>Select a specific position or skill technique below to view study notes and training videos.</p>
+                <div class="hub-grid">
+                    <div class="hub-card" data-target="libero">
+                        <h3>Libero</h3>
+                        <p>Master defensive footwork, platform angles, and diving mechanics.</p>
+                    </div>
+                    <div class="hub-card" data-target="outside">
+                        <h3>Outside</h3>
+                        <p>Develop power hitting, explosive approaches, and emergency out-of-system setting.</p>
+                    </div>
+                    <div class="hub-card" data-target="opposite">
+                        <h3>Opposite</h3>
+                        <p>Learn right-side blocking configurations and sharp angle termination.</p>
+                    </div>
+                    <div class="hub-card" data-target="middle">
+                        <h3>Middle</h3>
+                        <p>Optimize quick-tempo timing, close-the-block footwork, and transition speed.</p>
+                    </div>
+                    <div class="hub-card" data-target="setter">
+                        <h3>Setter</h3>
+                        <p>Refine hand placement, backsets, deceptive dumps, and floor leadership.</p>
+                    </div>
+                    <div class="hub-card" data-target="jump-topspin">
+                        <h3>Jump Topspin</h3>
+                        <p>Master the high-velocity aggressive service mechanics and toss consistency.</p>
+                    </div>
+                    <div class="hub-card" data-target="jump-float">
+                        <h3>Jump Float</h3>
+                        <p>Learn unpredictable ball flight mechanics and clean contact points.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resource Template Sections (Libero, Outside, Opposite, Middle, Setter, Jump Topspin, Jump Float) -->
+        <!-- Each template uses the exact same class architecture. Adjust video quantity by adding/removing elements. -->
+        
+        <!-- 1. Libero -->
+        <section id="libero" class="tab-content resource-section">
+            <div class="resource-header">
+                <h2>Libero Training & Notes</h2>
+                <button class="back-to-hub" data-tab="videos-notes">← Back to Hub</button>
+            </div>
+            <div class="doc-container">
+                <h3>Coaching Notes & Document</h3>
+                <!-- Replace 'YOUR_GOOGLE_DOC_EMBED_LINK_HERE' with your actual shared iframe URL or document viewer link -->
+                <iframe src="YOUR_GOOGLE_DOC_EMBED_LINK_HERE" class="doc-frame" title="Libero Notes"></iframe>
+            </div>
+            <div class="videos-container">
+                <h3>Training Videos (Adjust video count by copying/removing video cards)</h3>
+                <div class="video-grid">
+                    <!-- Video Card 1 -->
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Libero Video 1" allowfullscreen></iframe>
+                        <p class="video-title">Defensive Footwork Breakdown</p>
+                    </div>
+                    <!-- Video Card 2 -->
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="Libero Video 2" allowfullscreen></iframe>
+                        <p class="video-title">Platform Stability Drill</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Outside -->
+        <section id="outside" class="tab-content resource-section">
+            <div class="resource-header">
+                <h2>Outside Hitter Training & Notes</h2>
+                <button class="back-to-hub" data-tab="videos-notes">← Back to Hub</button>
+            </div>
+            <div class="doc-container">
+                <h3>Coaching Notes & Document</h3>
+                <iframe src="YOUR_GOOGLE_DOC_EMBED_LINK_HERE" class="doc-frame" title="Outside Notes"></iframe>
+            </div>
+            <div class="videos-container">
+                <h3>Training Videos</h3>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Outside Video 1" allowfullscreen></iframe>
+                        <p class="video-title">Approach Footwork Fundamentals</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Opposite -->
+        <section id="opposite" class="tab-content resource-section">
+            <div class="resource-header">
+                <h2>Opposite Hitter Training & Notes</h2>
+                <button class="back-to-hub" data-tab="videos-notes">← Back to Hub</button>
+            </div>
+            <div class="doc-container">
+                <h3>Coaching Notes & Document</h3>
+                <iframe src="YOUR_GOOGLE_DOC_EMBED_LINK_HERE" class="doc-frame" title="Opposite Notes"></iframe>
+            </div>
+            <div class="videos-container">
+                <h3>Training Videos</h3>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Opposite Video 1" allowfullscreen></iframe>
+                        <p class="video-title">Right-Side Attack Angles</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Middle -->
+        <section id="middle" class="tab-content resource-section">
+            <div class="resource-header">
+                <h2>Middle Blocker Training & Notes</h2>
+                <button class="back-to-hub" data-tab="videos-notes">← Back to Hub</button>
+            </div>
+            <div class="doc-container">
+                <h3>Coaching Notes & Document</h3>
+                <iframe src="YOUR_GOOGLE_DOC_EMBED_LINK_HERE" class="doc-frame" title="Middle Notes"></iframe>
+            </div>
+            <div class="videos-container">
+                <h3>Training Videos</h3>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Middle Video 1" allowfullscreen></iframe>
+                        <p class="video-title">Transition and Quick Tempo Timing</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Setter -->
+        <section id="setter" class="tab-content resource-section">
+            <div class="resource-header">
+                <h2>Setter Training & Notes</h2>
+                <button class="back-to-hub" data-tab="videos-notes">← Back to Hub</button>
+            </div>
+            <div class="doc-container">
+                <h3>Coaching Notes & Document</h3>
+                <iframe src="YOUR_GOOGLE_DOC_EMBED_LINK_HERE" class="doc-frame" title="Setter Notes"></iframe>
+            </div>
+            <div class="videos-container">
+                <h3>Training Videos</h3>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Setter Video 1" allowfullscreen></iframe>
+                        <p class="video-title">Hand Placement & Backsets</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Jump Topspin -->
+        <section id="jump-topspin" class="tab-content resource-section">
+            <div class="resource-header">
+                <h2>Jump Topspin Serve Training & Notes</h2>
+                <button class="back-to-hub" data-tab="videos-notes">← Back to Hub</button>
+            </div>
+            <div class="doc-container">
+                <h3>Coaching Notes & Document</h3>
+                <iframe src="YOUR_GOOGLE_DOC_EMBED_LINK_HERE" class="doc-frame" title="Jump Topspin Notes"></iframe>
+            </div>
+            <div class="videos-container">
+                <h3>Training Videos</h3>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Jump Topspin Video 1" allowfullscreen></iframe>
+                        <p class="video-title">Toss Height & Arm Swing Mechanics</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Jump Float -->
+        <section id="jump-float" class="tab-content resource-section">
+            <div class="resource-header">
+                <h2>Jump Float Serve Training & Notes</h2>
+                <button class="back-to-hub" data-tab="videos-notes">← Back to Hub</button>
+            </div>
+            <div class="doc-container">
+                <h3>Coaching Notes & Document</h3>
+                <iframe src="YOUR_GOOGLE_DOC_EMBED_LINK_HERE" class="doc-frame" title="Jump Float Notes"></iframe>
+            </div>
+            <div class="videos-container">
+                <h3>Training Videos</h3>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Jump Float Video 1" allowfullscreen></iframe>
+                        <p class="video-title">Palm Surface Contact & Follow Through</p>
+                    </div>
                 </div>
             </div>
         </section>
