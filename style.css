@@ -1,211 +1,1064 @@
-
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Videos and Notes Hub Grid */
-.hub-container {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    border: var(--glass-border);
-    border-radius: 2rem;
-    padding: 3rem;
-    box-shadow: var(--glass-shadow);
-    text-align: center;
-}
-
-.hub-container h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--text-main);
-}
-
-.hub-container p {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin-bottom: 2.5rem;
-}
-
-.hub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.hub-card {
-    background: rgba(255, 255, 255, 0.6);
-    border: var(--glass-border);
-    padding: 2rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    text-align: left;
-}
-
-.hub-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.9);
-    border-color: var(--accent);
-}
-
-.hub-card h3 {
-    color: var(--accent);
-    margin-bottom: 0.8rem;
-    font-size: 1.3rem;
-}
-
-.hub-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin: 0;
-}
-
-/* Resource Section Templates (Doc + Videos Layout) */
-.resource-section {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    border: var(--glass-border);
-    border-radius: 2rem;
-    padding: 3rem;
-    box-shadow: var(--glass-shadow);
-}
-
-.resource-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    padding-bottom: 1.5rem;
-}
-
-.resource-header h2 {
-    font-size: 2rem;
-    color: var(--text-main);
-}
-
-.back-to-hub {
-    background: rgba(255, 255, 255, 0.6);
-    border: var(--glass-border);
-    padding: 0.6rem 1.2rem;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 600;
-    color: var(--text-main);
-    transition: all 0.3s ease;
-}
-
-.back-to-hub:hover {
-    background: var(--accent);
-    color: white;
-}
-
-.doc-container {
-    margin-bottom: 3rem;
-}
-
-.doc-container h3, .videos-container h3 {
-    font-size: 1.3rem;
-    color: var(--text-main);
-    margin-bottom: 1rem;
-}
-
-.doc-frame {
-    width: 100%;
-    height: 500px;
-    border: var(--glass-border);
-    border-radius: 1rem;
-    background: white;
-}
-
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.video-card {
-    background: rgba(255, 255, 255, 0.5);
-    border: var(--glass-border);
-    border-radius: 1rem;
-    padding: 1rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-}
-
-.video-card iframe {
-    width: 100%;
-    height: 200px;
-    border: none;
-    border-radius: 0.5rem;
-    margin-bottom: 0.8rem;
-}
-
-.video-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-main);
-    text-align: center;
-}
 :root {
+
     --bg-color: #f7f9fc;
+
     --primary-blue: #89b4f8;
+
     --primary-orange: #fca369;
+
     --sunset-gradient: linear-gradient(135deg, #e0f2fe 0%, #fed7aa 100%);
+
     --card-bg: rgba(255, 255, 255, 0.7);
+
     --text-main: #2d3748;
+
     --text-muted: #718096;
+
     --accent: #ed8936;
+
     --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+
     --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+
 }
+
+
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: 'Outfit', sans-serif;
+
+}
+
+
 
 body {
+
     background: var(--sunset-gradient);
+
     color: var(--text-main);
+
     min-height: 100vh;
+
     overflow-x: hidden;
+
 }
 
-/* Dropdown Menu Fix */
-.dropdown {
-    position: relative;
-    display: inline-block;
+
+
+/* Navbar */
+
+.navbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 1.5rem 4rem;
+
+    background: rgba(255, 255, 255, 0.4);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    border-bottom: var(--glass-border);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    min-width: 180px;
-    box-shadow: var(--glass-shadow);
-    border: var(--glass-border);
-    border-radius: 12px;
-    padding: 0.5rem 0;
-    z-index: 200;
-}
 
-.dropdown-content a {
-    color: var(--text-main);
-    padding: 0.6rem 1.2rem;
-    display: block;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 0;
-    box-shadow: none !important;
-}
 
-.dropdown-content a:hover {
-    background: rgba(252, 163, 105, 0.15);
+.logo {
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
     color: var(--accent);
+
+    letter-spacing: 1px;
+
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+
+
+.nav-links {
+
+    display: flex;
+
+    list-style: none;
+
+    gap: 2rem;
+
 }
+
+
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: var(--text-main);
+
+    font-weight: 600;
+
+    font-size: 1.1rem;
+
+    padding: 0.5rem 1rem;
+
+    border-radius: 20px;
+
+    transition: all 0.3s ease;
+
+}
+
+
+
+.nav-links a:hover, .nav-links a.active {
+
+    background: rgba(255, 255, 255, 0.6);
+
+    color: var(--accent);
+
+    box-shadow: 0 4px 15px rgba(252, 163, 105, 0.2);
+
+}
+
+
+
+/* Main Content */
+
+.content-container {
+
+    padding: 3rem 4rem;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+}
+
+
+
+.tab-content {
+
+    display: none;
+
+    animation: fadeIn 0.5s ease;
+
+}
+
+
+
+.tab-content.active-tab {
+
+    display: block;
+
+}
+
+
+
+@keyframes fadeIn {
+
+    from { opacity: 0; transform: translateY(10px); }
+
+    to { opacity: 1; transform: translateY(0); }
+
+}
+
+
+
+/* Home Section */
+
+.hero-section {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 4rem;
+
+    margin-bottom: 5rem;
+
+}
+
+
+
+.hero-text {
+
+    flex: 1;
+
+}
+
+
+
+.hero-text h1 {
+
+    font-size: 4rem;
+
+    line-height: 1.1;
+
+    margin-bottom: 1.5rem;
+
+    background: linear-gradient(to right, #4299e1, #ed8936);
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+
+.hero-text p {
+
+    font-size: 1.25rem;
+
+    color: var(--text-muted);
+
+    margin-bottom: 2rem;
+
+}
+
+
+
+.pricing-card {
+
+    background: var(--card-bg);
+
+    backdrop-filter: blur(12px);
+
+    border: var(--glass-border);
+
+    padding: 1.5rem;
+
+    border-radius: 1rem;
+
+    display: inline-block;
+
+    box-shadow: var(--glass-shadow);
+
+}
+
+
+
+.price-label {
+
+    font-size: 0.9rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: var(--text-muted);
+
+}
+
+
+
+.price {
+
+    font-size: 2.5rem;
+
+    color: var(--text-main);
+
+    margin: 0.5rem 0;
+
+}
+
+
+
+.per-hour {
+
+    font-size: 1rem;
+
+    color: var(--text-muted);
+
+}
+
+
+
+.price-note {
+
+    font-size: 0.8rem;
+
+    color: var(--accent);
+
+}
+
+
+
+.hero-image-wrapper {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+}
+
+
+
+.hero-image {
+
+    max-width: 100%;
+
+    border-radius: 20px;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.3s ease;
+
+}
+
+
+
+.hero-image:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+
+.positions-section h2 {
+
+    font-size: 2.5rem;
+
+    margin-bottom: 2rem;
+
+    text-align: center;
+
+    color: var(--text-main);
+
+}
+
+
+
+.positions-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 2rem;
+
+}
+
+
+
+.position-card {
+
+    background: var(--card-bg);
+
+    backdrop-filter: blur(8px);
+
+    border: var(--glass-border);
+
+    padding: 2rem;
+
+    border-radius: 1rem;
+
+    box-shadow: var(--glass-shadow);
+
+    transition: all 0.3s ease;
+
+}
+
+
+
+.position-card:hover {
+
+    transform: translateY(-5px);
+
+    background: rgba(255, 255, 255, 0.9);
+
+}
+
+
+
+.position-card h3 {
+
+    color: var(--accent);
+
+    margin-bottom: 1rem;
+
+}
+
+
+
+.position-card p {
+
+    color: var(--text-muted);
+
+    line-height: 1.6;
+
+}
+
+
+
+/* Credentials Section */
+
+.credentials-wrapper {
+
+    display: flex;
+
+    gap: 4rem;
+
+    background: var(--card-bg);
+
+    backdrop-filter: blur(10px);
+
+    border: var(--glass-border);
+
+    border-radius: 2rem;
+
+    padding: 4rem;
+
+    box-shadow: var(--glass-shadow);
+
+}
+
+
+
+.profile-area {
+
+    flex: 1;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+.profile-image {
+
+    width: 250px;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid white;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+
+.accolades {
+
+    flex: 2;
+
+}
+
+
+
+.accolades h2 {
+
+    font-size: 2.5rem;
+
+    margin-bottom: 2rem;
+
+    background: linear-gradient(to right, #ed8936, #4299e1);
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+
+.credentials-list {
+
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+}
+
+
+
+.credentials-list li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.5rem;
+
+    background: rgba(255,255,255,0.5);
+
+    padding: 1.5rem;
+
+    border-radius: 1rem;
+
+    transition: transform 0.2s ease;
+
+}
+
+
+
+.credentials-list li:hover {
+
+    transform: scale(1.02);
+
+    background: rgba(255,255,255,0.8);
+
+}
+
+
+
+.cred-icon {
+
+    font-size: 2.5rem;
+
+}
+
+
+
+.cred-text strong {
+
+    display: block;
+
+    font-size: 1.2rem;
+
+    color: var(--text-main);
+
+    margin-bottom: 0.2rem;
+
+}
+
+
+
+.cred-text span {
+
+    color: var(--text-muted);
+
+}
+
+
+
+/* Sign Up Section */
+
+.signup-container {
+
+    text-align: center;
+
+    background: var(--card-bg);
+
+    backdrop-filter: blur(10px);
+
+    border: var(--glass-border);
+
+    border-radius: 2rem;
+
+    padding: 5rem 2rem;
+
+    box-shadow: var(--glass-shadow);
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+}
+
+
+
+.signup-container h2 {
+
+    font-size: 3rem;
+
+    margin-bottom: 1rem;
+
+    color: var(--text-main);
+
+}
+
+
+
+.signup-container p {
+
+    font-size: 1.2rem;
+
+    color: var(--text-muted);
+
+    margin-bottom: 3rem;
+
+}
+
+
+
+.form-link-button {
+
+    display: inline-block;
+
+    padding: 1rem 3rem;
+
+    background: linear-gradient(135deg, #4299e1, #ed8936);
+
+    color: white;
+
+    font-size: 1.2rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-radius: 50px;
+
+    box-shadow: 0 10px 20px rgba(237, 137, 54, 0.3);
+
+    transition: all 0.3s ease;
+
+}
+
+
+
+.form-link-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 15px 25px rgba(237, 137, 54, 0.4);
+
+}
+
+
+
+@media (max-width: 900px) {
+
+    .hero-section, .credentials-wrapper {
+
+        flex-direction: column;
+
+    }
+
+    
+
+    .hero-text h1 {
+
+        font-size: 3rem;
+
+    }
+
+    
+
+    .nav-links {
+
+        gap: 1rem;
+
+    }
+
+    
+
+    .content-container {
+
+        padding: 2rem;
+
+    }
+
+}
+
+/* Contact Section Styling */
+
+.contact-container {
+
+    margin-top: 1.5rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.8rem;
+
+    width: 100%;
+
+    max-width: 280px; /* Keeps it centered and neat */
+
+}
+
+
+
+.contact-link {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 0.8rem 1.2rem;
+
+    background: rgba(255, 255, 255, 0.3);
+
+    border: var(--glass-border);
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    color: var(--text-main);
+
+    font-weight: 400;
+
+    transition: all 0.3s ease;
+
+}
+
+
+
+.contact-link:hover {
+
+    background: rgba(255, 255, 255, 0.6);
+
+    transform: translateX(5px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+}
+
+
+
+.contact-icon {
+
+    font-size: 1.2rem;
+
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+
+}
+
+
+
+.contact-link span:last-child {
+
+    font-size: 0.95rem;
+
+    color: var(--text-main);
+
+}
+
+
+
+/* Optional: Make the Instagram handle the accent color on hover */
+
+.contact-link:hover span:last-child {
+
+    color: var(--accent);
+
+}
+
+Here is the HTML:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Private Volleyball Coaching</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">Private Coaching</div>
+
+        <ul class="nav-links">
+
+            <li><a href="#home" class="active" data-tab="home">Home</a></li>
+
+            <li><a href="#credentials" data-tab="credentials">About me</a></li>
+
+            <li><a href="#signup" data-tab="signup">Sign Up</a></li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <main class="content-container">
+
+        <!-- Home Section -->
+
+        <section id="home" class="tab-content active-tab">
+
+            <div class="hero-section">
+
+                <div class="hero-text">
+
+                    <h1>Elevate Your Game.</h1>
+
+                    <p>Experience elite private volleyball coaching tailored to help you dominate on the court. Personalized coaching tailored to your wants and needs. </p>
+
+                    <div class="pricing-card">
+
+                        <span class="price-label">Coaching Rate</span>
+
+                        <h2 class="price">$30 <span class="per-hour">/ hour</span></h2>
+
+                        <p class="price-note">(Placeholder rate, open for adjustment)</p>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-image-wrapper">
+
+                    <img src="assets/hero_bg.png" alt="Sunset Volleyball" class="hero-image">
+
+                </div>
+
+            </div>
+
+
+
+            <div class="positions-section">
+
+                <h2>Roles of Volleyball Positions</h2>
+
+                <div class="positions-grid">
+
+                    <div class="position-card">
+
+                        <h3>Outside Hitter (OH)</h3>
+
+                        <p>The primary attacker and passer. Plays on the left side of the court, needing strong jumping and hitting abilities.</p>
+
+                    </div>
+
+                    <div class="position-card">
+
+                        <h3>Opposite Hitter (OPP)</h3>
+
+                        <p>Plays on the right side. Responsible for hitting from the right and blocking the opponent's outside hitter.</p>
+
+                    </div>
+
+                    <div class="position-card">
+
+                        <h3>Middle Blocker (MB)</h3>
+
+                        <p>The team's first line of defense. Tallest players, responsible for blocking and executing fast attacks from the middle.</p>
+
+                    </div>
+
+                    <div class="position-card">
+
+                        <h3>Setter (S)</h3>
+
+                        <p>The "quarterback" of the team. Runs the team's offense, aiming to receive the second touch and set up the attackers.</p>
+
+                    </div>
+
+                    <div class="position-card">
+
+                        <h3>Libero (L)</h3>
+
+                        <p>A specialized defensive player. Wears a different color jersey and can substitute freely in the back row to pass and dig.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Credentials Section -->
+
+        <section id="credentials" class="tab-content">
+
+            <div class="credentials-wrapper">
+
+                <div class="profile-area">
+
+                    <img src="coach_pranav (1).png" alt="Coach Profile" class="profile-image">
+
+                    <h2>Meet Your Coach</h2>
+
+                    <div class="contact-container">
+
+                        <a href="mailto:pranavd0611@gmail.com" class="contact-link">
+
+                            <span class="contact-icon">✉️</span>
+
+                            <span>pranavd0611@gmail.com</span>
+
+                        </a>
+
+                        <a href="https://instagram.com/Pranav_vb14" target="_blank" class="contact-link">
+
+                            <span class="contact-icon">📸</span>
+
+                            <span>@Pranav_vb14</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="accolades">
+
+                    <h2>Credentials & Accolades</h2>
+
+                    <ul class="credentials-list">
+
+                        <li>
+
+                            <div class="cred-icon">🏆</div>
+
+                            <div class="cred-text">
+
+                                <strong>National Champion</strong>
+
+                                <span>U-14 Club Division</span>
+
+                            </div>
+
+                        </li>
+
+                        <li>
+
+                            <div class="cred-icon">🎖️</div>
+
+                            <div class="cred-text">
+
+                                <strong>All American Award</strong>
+
+                                <span>Recognized for elite performance</span>
+
+                            </div>
+
+                        </li>
+
+                        <li>
+
+                            <div class="cred-icon">⭐</div>
+
+                            <div class="cred-text">
+
+                                <strong>All Tournament Team (x2)</strong>
+
+                                <span>Awarded for Blocking and Hitting</span>
+
+                            </div>
+
+                        </li>
+
+                        <li>
+
+                            <div class="cred-icon">🏐</div>
+
+                            <div class="cred-text">
+
+                                <strong>Bay to Bay Player</strong>
+
+                                <span>Currently playing club volleyball for Bay to Bay</span>
+
+                            </div>
+
+                        </li>
+
+                        <li>
+
+                            <div class="cred-icon">🏫</div>
+
+                            <div class="cred-text">
+
+                                <strong>Lynbrook High School</strong>
+
+                                <span>Member of the Lynbrook JV Boys Volleyball Team</span>
+
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Sign Up Section -->
+
+        <section id="signup" class="tab-content">
+
+            <div class="signup-container">
+
+                <h2>Ready to Level Up?</h2>
+
+                <p>Fill out the form below to secure your spot for private coaching.</p>
+
+                <div class="form-wrapper">
+
+                    <a href="https://forms.gle/ecRMKMSPL1EUQDLN8" target="_blank" class="form-link-button">Open Google Form in New Tab</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
