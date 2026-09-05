@@ -390,3 +390,174 @@ body {
 .contact-link:hover span:last-child {
     color: var(--accent);
 }
+/* Navbar Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    min-width: 200px;
+    box-shadow: var(--glass-shadow);
+    border: var(--glass-border);
+    border-radius: 12px;
+    z-index: 200;
+    top: 100%;
+    left: 0;
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+
+.dropdown-content a {
+    color: var(--text-main);
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    border-radius: 0;
+    font-weight: 500;
+}
+
+.dropdown-content a:hover {
+    background: rgba(252, 163, 105, 0.15);
+    color: var(--accent);
+    box-shadow: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hub Grid Styles */
+.hub-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hub-container h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.hub-container > p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+}
+
+.hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.hub-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: var(--glass-border);
+    padding: 2.5rem 2rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--glass-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.hub-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 15px 30px rgba(237, 137, 54, 0.15);
+}
+
+.hub-card h3 {
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+}
+
+.hub-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Individual Resource Section Layout */
+.resource-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: var(--glass-border);
+    border-radius: 2rem;
+    padding: 3rem;
+    box-shadow: var(--glass-shadow);
+}
+
+.resource-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+}
+
+.back-to-hub {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+.back-to-hub:hover {
+    transform: translateX(-3px);
+}
+
+.doc-wrapper {
+    margin-bottom: 3rem;
+}
+
+.doc-wrapper h3, .videos-section h3 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+.doc-frame {
+    width: 100%;
+    height: 550px;
+    border: none;
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.video-card {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 1rem;
+    overflow: hidden;
+    border: var(--glass-border);
+    aspect-ratio: 16/9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
